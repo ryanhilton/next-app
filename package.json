@@ -4,14 +4,15 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "next dev -p 3005",
+        "dev": "next dev -p 3006",
         "build": "next build",
         "start": "next start",
-		"export": "next export"
+        "export": "next export"
     },
     "author": "Ryan",
     "license": "ISC",
     "dependencies": {
+        "axios": "^0.21.1",
         "next": "^10.0.5",
         "react": "^17.0.1",
         "react-dom": "^17.0.1"
