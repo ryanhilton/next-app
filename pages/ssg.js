@@ -21,23 +21,23 @@ const StaticSide = (props) => {
 };
 
 export const getStaticProps = async () => {
-	const response = await axios.get(url, { headers });
-            // console.log(response);
-	const promises = response.data.results.map((result) => {
-		return axios.get(result.url);
-	});
+    const response = await axios.get(url, { headers });
+    // console.log(response);
+    const promises = response.data.results.map((result) => {
+        return axios.get(result.url);
+    });
 
-	const responses = await Promise.all(promises);
+    const responses = await Promise.all(promises);
 
-	const pokeData = responses.map((r) => {
-		return {
-			name: r.data.name,
-			imgUrl: r.data.sprites.front_default,
-		};
-	});
+    const pokeData = responses.map((r) => {
+        return {
+            name: r.data.name,
+            imgUrl: r.data.sprites.front_default,
+        };
+    });
     return {
         props: {
-            pokemon: pokeData
+            pokemon: pokeData,
         },
     };
 };
